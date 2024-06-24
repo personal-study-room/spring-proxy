@@ -4,6 +4,7 @@ import com.example.proxy.decorator.code.Component;
 import com.example.proxy.decorator.code.DecoratorPatternClient;
 import com.example.proxy.decorator.code.MessageDecorator;
 import com.example.proxy.decorator.code.RealComponent;
+import com.example.proxy.decorator.code.TimeDecorator;
 import org.junit.jupiter.api.Test;
 
 public class DecoratorPatternTest {
@@ -38,4 +39,21 @@ public class DecoratorPatternTest {
      */
   }
 
+  @Test
+  void timeDecorator() {
+    Component realComponent = new RealComponent();
+    Component messageComponent = new MessageDecorator(realComponent);
+    Component timeDecorator = new TimeDecorator(messageComponent);
+    DecoratorPatternClient client = new DecoratorPatternClient(timeDecorator);
+
+    client.execute();
+    /**
+     * 09:26:27.396 [main] INFO com.example.proxy.decorator.code.TimeDecorator -- TimeDecorator 실행
+     * 09:26:27.397 [main] INFO com.example.proxy.decorator.code.MessageDecorator -- MessageDecorator 실행
+     * 09:26:27.398 [main] INFO com.example.proxy.decorator.code.RealComponent -- RealComponent 실행
+     * 09:26:27.398 [main] INFO com.example.proxy.decorator.code.MessageDecorator -- MessageDecorator 꾸미기 적용전=data, 적용 후=****data****
+     * 09:26:27.399 [main] INFO com.example.proxy.decorator.code.TimeDecorator -- TimeDecorator 종료 resultTime=-2ms
+     * 09:26:27.399 [main] INFO com.example.proxy.decorator.code.DecoratorPatternClient -- result=****data****
+     */
+  }
 }
