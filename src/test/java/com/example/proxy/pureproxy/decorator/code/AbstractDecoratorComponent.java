@@ -1,4 +1,4 @@
-package com.example.proxy.decorator.code;
+package com.example.proxy.pureproxy.decorator.code;
 
 public abstract class AbstractDecoratorComponent implements Component {
 

@@ -1,10 +1,10 @@
-package com.example.proxy.decorator;
+package com.example.proxy.pureproxy.decorator;
 
-import com.example.proxy.decorator.code.Component;
-import com.example.proxy.decorator.code.DecoratorPatternClient;
-import com.example.proxy.decorator.code.MessageDecorator;
-import com.example.proxy.decorator.code.RealComponent;
-import com.example.proxy.decorator.code.TimeDecorator;
+import com.example.proxy.pureproxy.decorator.code.Component;
+import com.example.proxy.pureproxy.decorator.code.DecoratorPatternClient;
+import com.example.proxy.pureproxy.decorator.code.MessageDecorator;
+import com.example.proxy.pureproxy.decorator.code.RealComponent;
+import com.example.proxy.pureproxy.decorator.code.TimeDecorator;
 import org.junit.jupiter.api.Test;
 
 public class DecoratorPatternTest {
