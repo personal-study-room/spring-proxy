@@ -1,6 +1,6 @@
 package com.example.proxy;
 
-import com.example.proxy.config.v5_postprocessor.BeanPostProcessorConfig;
+import com.example.proxy.config.v6_autoproxy.AutoProxyConfig;
 import com.example.proxy.trace.logtrace.LogTrace;
 import com.example.proxy.trace.logtrace.ThreadLocalLogTrace;
 import org.springframework.boot.SpringApplication;
@@ -15,7 +15,8 @@ import org.springframework.context.annotation.Import;
 //@Import({DynamicProxyBasicConfig.class})
 //@Import({DynamicProxyFilterConfig.class})
 //@Import({ProxyFactoryConfigV1.class})
-@Import({BeanPostProcessorConfig.class})
+//@Import({BeanPostProcessorConfig.class})
+@Import({AutoProxyConfig.class})
 @SpringBootApplication(scanBasePackages = "com.example.proxy.app.v3")  // 주의. 왜 했을까? app의 V1, v2, v3, ... 하려고
 public class ProxyApplication {
 
